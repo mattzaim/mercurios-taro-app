@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.corax.com)",
+      "Bash(npm create vite@latest . -- --template react)",
+      "Bash(npm install)",
+      "Bash(npx vite build)",
+      "Bash(tail_start=483)",
+      "Read(//Users/suha/Desktop/coding/taro app/**)",
+      "Bash(npm run build)"
+    ]
+  }
+}
