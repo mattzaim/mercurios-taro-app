@@ -92,7 +92,7 @@ const css = `
   .t-card-scene {
     width: 100%;
     perspective: 1000px;
-    margin-bottom: 16px;
+    margin: 0 auto 16px;
     cursor: pointer;
     flex-shrink: 0;
   }
@@ -102,7 +102,7 @@ const css = `
     height: 380px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform 0.35s cubic-bezier(0.4, 0.2, 0.2, 1);
   }
 
   .t-card-flipper.flipped { transform: rotateY(180deg); }
@@ -162,23 +162,23 @@ const css = `
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 14px 20px 14px;
+    padding: 18px 20px 14px;
   }
   .t-card-front-body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 16px;
     width: 100%;
-    margin-top: 16px;
+    margin-top: 0px;
   }
   .t-card-front-number {
     font-family: 'Press Start 2P', monospace;
-    font-size: 9px;
+    font-size: 10px;
     color: var(--gold);
     letter-spacing: 2px;
-    margin-bottom: -4px;
+    margin-bottom: 0px;
   }
   .t-card-front-name {
     font-family: 'Press Start 2P', monospace;
@@ -194,14 +194,14 @@ const css = `
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 53px;
+    font-size: 62px;
     filter: saturate(0.4) brightness(1);
     margin: 8px 0;
     transition: transform 0.3s;
   }
   .t-card-front-arcana {
     font-family: 'Press Start 2P', monospace;
-    font-size: 7px;
+    font-size: 8px;
     color: var(--gold);
     letter-spacing: 1px;
     opacity: 0.7;
@@ -214,6 +214,7 @@ const css = `
     position: absolute;
     top: 14px;
     left: 16px;
+    transform: scaleX(-1);
   }
   .t-card-front-tags {
     display: flex;
@@ -357,6 +358,16 @@ export default function TarotApp() {
   const isFlipped = flipped.includes(activeIdx);
   const hasCards = drawnCards.length > 0;
 
+  const suitCode = { DISKS: "d", SWORDS: "s", WANDS: "w", CUPS: "c" };
+  const rankCode = { ACE: "ACE ", TWO: "2", THREE: "3", FOUR: "4", FIVE: "5", SIX: "6", SEVEN: "7", EIGHT: "8", NINE: "9", TEN: "10", PAGE: "P", KNIGHT: "KNI ", QUEEN: "Q", KING: "KIN" };
+  const getShortcode = (card) => {
+    if (!card.suit) return `— ${card.number} —`;
+    const rank = rankCode[card.number] ?? card.number;
+    const suit = suitCode[card.suit] ?? card.suit[0];
+    const rev = card.isReversed ? "R" : "";
+    return `${rank}${suit}${rev}`;
+  };
+
   return (
     <>
       <style>{css}</style>
@@ -417,7 +428,7 @@ export default function TarotApp() {
                   {activeCard.isReversed ? "R" : ""}
                 </div>
                 <div className="t-card-front-body">
-                  <div className="t-card-front-number">— {activeCard.number} —</div>
+                  <div className="t-card-front-number">{getShortcode(activeCard)}</div>
                   <div
                     className="t-card-illustration"
                     style={{ transform: (activeCard.isReversed !== !!activeCard.flipEmoji) ? "rotate(180deg)" : "none" }}
@@ -426,7 +437,7 @@ export default function TarotApp() {
                   </div>
                   <div className="t-card-front-name">{activeCard.name}</div>
                   <div className="t-card-front-arcana">
-                    {activeCard.suit ? `MINOR · ${activeCard.suit}` : "MAJOR ARCANA"}
+                    {activeCard.suit ? "MINOR ARCANA" : "MAJOR ARCANA"}
                   </div>
                 </div>
                 <div className="t-card-front-tags">

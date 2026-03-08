@@ -136,85 +136,85 @@ export const tarotData = {
   minor: [
     // ── WANDS ──
     {
-      id: 22, number: "ACE", name: "ACE OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 22, number: "ACE", name: "ACE OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#fire", "#inspiration", "#newventure", "#passion", "#potential"],
       description: "The Ace of Wands is the root of the power of fire — pure creative energy in its most concentrated and unshaped form. It is the spark before the flame, the vision before the work, the surge of inspiration that demands expression. When this card appears, something new and vital is being ignited. The invitation is to trust the fire: to begin, to create, to reach toward the vision that burns brightest within you without waiting for perfect conditions or complete certainty.",
       reversedText: "Reversed, the fire is present but blocked — a creative potential that cannot yet find its outlet. There may be delays, false starts, or an inability to commit to the first step. The flame needs air. What is suppressing the spark?"
     },
     {
-      id: 26, number: "TWO", name: "TWO OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 26, number: "TWO", name: "TWO OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#dominion", "#willpower", "#creativity", "#courage", "#determination"],
       description: "The card represents the direction and focus given to raw creative energy. It embodies courage, determination, and the will to conquer in its drive aspect. Power and creativity channel the initial spark into purposeful action, though such intensity requires restraint to avoid collateral damage.",
       reversedText: "Destruction, shamelessness, revenge, and restlessness emerge when the card's forceful energy becomes uncontrolled or misdirected, manifesting as harmful rather than creative power."
     },
     {
-      id: 27, number: "THREE", name: "THREE OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 27, number: "THREE", name: "THREE OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#virtue", "#accomplishment", "#confidence", "#nobility", "#leadership"],
       description: "The powerful fire understands its responsibility. Elemental forces are guided by understanding and awareness, creating ideal conditions to begin a work or project and go ahead with a plan. Accomplishment, confidence, harmony, pride, and nobility are its light aspects.",
       reversedText: "Moodiness, overestimation of abilities, conceit, rudeness, insolence, obstinacy, and treachery emerge as the distorted expression of the card's natural pride and confidence."
     },
     {
-      id: 28, number: "FOUR", name: "FOUR OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 28, number: "FOUR", name: "FOUR OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#completion", "#reward", "#achievement", "#rest", "#maturity"],
       description: "Completion and accomplishment. Well earned rewards and rest after labor capture the positive aspects. The card symbolizes work completed successfully, plans that materialized, and spiritual maturation through life lessons.",
       reversedText: "Overestimation, torpidity, and loss of tranquility suggest stagnation where one may overestimate achievements or lose the peace that should accompany genuine completion."
     },
     {
-      id: 29, number: "FIVE", name: "FIVE OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 29, number: "FIVE", name: "FIVE OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#strife", "#conflict", "#challenge", "#renewal", "#boldness"],
       description: "Challenge, the will to break out, contest, struggle, conflict, and rashness are the driving forces. Refreshment, renewal, and boldness emerge as the card signifies revolutionary movements where fire breaks through established structures to create necessary transformation.",
       reversedText: "Struggle, conflict, destruction, spiritual crisis, prodigality, and trickery reflect violent disruption and restless aggression — conflict that arises from boredom rather than purposeful change."
     },
     {
-      id: 30, number: "SIX", name: "SIX OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 30, number: "SIX", name: "SIX OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#victory", "#triumph", "#success", "#fulfillment", "#overcoming"],
       description: "The crisis of the Five of Wands is overcome; the lesson was learned and turned into a victory. Creative fulfillment, satisfaction, triumph, and success through energy and industry reflect accomplishment earned through genuine effort and growth.",
       reversedText: "Vanity, reckless egoism, and insolence indicate when victory becomes corrupted by excessive pride and self-centeredness rather than balanced achievement."
     },
     {
-      id: 31, number: "SEVEN", name: "SEVEN OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 31, number: "SEVEN", name: "SEVEN OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#valour", "#courage", "#perseverance", "#initiation", "#rebirth"],
       description: "A situation requiring courage against overwhelming odds, where one must face forces stronger than oneself and draw upon learned skills to persevere. The drive centers on courage, fighting spirit, and overcoming opposition, while the light aspect suggests initiation and rebirth.",
       reversedText: "Getting attacked and facing hardships represent the darker manifestation of this card's confrontational energy."
     },
     {
-      id: 32, number: "EIGHT", name: "EIGHT OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 32, number: "EIGHT", name: "EIGHT OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#swiftness", "#progress", "#ideas", "#motion", "#development"],
       description: "Rapid progress and mental clarity. Sudden realizations and quick brainwaves indicate that solutions are imminent. Progression, ideas, creativity, motion, changes, and development emphasize the importance of swift decisive action and allowing the spirit freedom to operate at its best.",
       reversedText: "Rashness, thoughtlessness, rapacity, insolence, and jealousy warn against inefficiency. Excessive disputation and hesitation prevent progress, while moving too hastily creates chaos rather than beneficial outcomes."
     },
     {
-      id: 33, number: "NINE", name: "NINE OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 33, number: "NINE", name: "NINE OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#strength", "#determination", "#discipline", "#resilience", "#victory"],
       description: "Strength, determination, and discipline preparing for the final step to completion. Reflects spiritual realization through the combination of consciousness with the unconscious — great success but with strife and energy; victory preceded by apprehension and fear.",
       reversedText: "Conflicts and contradictions warn that one must use spiritual consciousness to concentrate on inner strength and master the will to avoid the card's negative manifestations."
     },
     {
-      id: 34, number: "TEN", name: "TEN OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 34, number: "TEN", name: "TEN OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#oppression", "#burden", "#force", "#overload", "#learning"],
       description: "Fire energy grounded in material reality becomes a blind and cruel force that no longer understands itself. The upright aspect offers the chance to think about it and learn — warning against forcing down natural vitality and creative energy.",
       reversedText: "Cruelty, excessive pressure, selfish and material ends, dogmatism, and aggression emphasize the destructive potential of unchecked force divorced from higher spiritual principles."
     },
     {
-      id: 35, number: "PAGE", name: "PAGE OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 35, number: "PAGE", name: "PAGE OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#enthusiasm", "#courage", "#passion", "#joie-de-vivre", "#fire"],
       description: "The Princess of Wands embodies passion, joy of life, enthusiasm, courage, and beauty. She displays fiery, spontaneous energy and magnetic appeal — a quick-burning, enthusiastic spirit.",
       reversedText: "Greed, arrogance, poverty of true feelings, superficiality, theatrics, cruelty, instability, and domineering behavior emerge. She may lack genuine emotional warmth and become cold and cruel while remaining unaware of her own emptiness."
     },
     {
-      id: 36, number: "KNIGHT", name: "KNIGHT OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 36, number: "KNIGHT", name: "KNIGHT OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#ambition", "#energy", "#passion", "#creativity", "#swiftness"],
       description: "The Prince of Wands embodies intellect combined with spiritual passion: energy, creativity, and passionate action with endless courage and tenacity. Swift, violent energy combined with generosity and impulsive determination.",
       reversedText: "Reckless destruction, cruelty, and sadism. Impatience escalates into instability, with constant restlessness seeking novelty but accomplishing nothing — intolerance, prejudice, and wasted potential."
     },
     {
-      id: 37, number: "QUEEN", name: "QUEEN OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 37, number: "QUEEN", name: "QUEEN OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#independence", "#passion", "#charisma", "#honor", "#leadership"],
       description: "Independence, honor, spiritual visions, passion, and adaptability. The Queen combines emotional depth with fiery energy, embodying love, understanding, sympathy, pride, inspiration, and powerful independence with warmth and creative ability.",
       reversedText: "Intolerance, despotism, jealousy, and reckless passion. She becomes hot-tempered, revengeful fury, overdominant and possessive, holding grudges indefinitely while lacking tolerance and self-control."
     },
     {
-      id: 38, number: "KING", name: "KING OF WANDS", suit: "WANDS", emoji: "🔥", color: "#FB923C",
+      id: 38, number: "KING", name: "KING OF WANDS", suit: "WANDS", emoji: "🪵", color: "#FB923C",
       tags: ["#leadership", "#inspiration", "#nobility", "#willpower", "#spirituality"],
       description: "The purest manifestation of fire — burning, enthusiastic, and thrilling. He embodies leadership, idealism, nobility, honesty, and intelligence, representing highest inspirations, spiritual realization, and purest creativity.",
       reversedText: "Despotism, egoism, and intolerance emerge when balance is lacking. Without depth, stability, or logic, strength degenerates to tyranny, convictions stiffen to dogmatism, and he can become cruel, bigoted, and brutal — fire consuming itself until nothing remains."
