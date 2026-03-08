@@ -40,7 +40,7 @@ const css = `
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 48px 28px 40px;
+    padding: 0px 28px 40px;
     position: relative;
     overflow-y: auto;
   }
