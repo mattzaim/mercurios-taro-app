@@ -194,7 +194,7 @@ const css = `
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 62px;
+    font-size: 66px;
     filter: saturate(0.4) brightness(1);
     margin: 8px 0;
     transition: transform 0.3s;
