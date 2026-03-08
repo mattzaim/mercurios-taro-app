@@ -97,7 +97,7 @@ export const tarotData = {
       reversedText: "Reversed, the Devil can indicate a release from bondage — the moment of recognizing and choosing to remove the chains. There may be a new independence, a breaking of an addiction or a pattern. But shadow work is never fully done."
     },
     {
-      id: 16, number: "XVI", name: "THE TOWER", emoji: "⚡⚡️", color: "#B45309",
+      id: 16, number: "XVI", name: "THE TOWER", emoji: "⚡️", color: "#B45309",
       tags: ["#upheaval", "#revelation", "#collapse", "#liberation", "#sudden change"],
       description: "The Tower is struck by lightning and everything built on false foundations comes tumbling down. This card speaks of sudden, dramatic, unavoidable change — the collapse of structures that could not have held regardless. The Tower is terrifying in the moment and clarifying in retrospect. What falls was always going to fall. The lightning does not destroy what was true — it only destroys the illusion of stability that was built over it. In the rubble of the Tower lies the possibility of building something real.",
       reversedText: "A reversed Tower may indicate a disaster narrowly avoided, or alternatively, a refusal to acknowledge an inevitable collapse. The structure is crumbling but you are holding it up with sheer will. How long can you maintain what has already fallen?"
