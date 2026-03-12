@@ -73,7 +73,7 @@ export const tarotData = {
       reversedText: "In shadow, Strength can become compulsion, addiction, or raw force without wisdom. The lion is no longer ridden but ridden over. Where is passion bleeding into obsession, or vitality consuming itself?"
     },
     {
-      id: 12, number: "XII", name: "THE HANGED MAN", emoji: "♟️", color: "#faa560", flipEmoji: true,
+      id: 12, number: "XII", name: "THE HANGED MAN", emoji: "🕯️", color: "#faa560", flipEmoji: true,
       tags: ["#surrender", "#pause", "#new perspective", "#sacrifice", "#waiting"],
       description: "The Hanged Man has chosen his suspension willingly. He hangs upside down from the World Tree, and from this inverted vantage point, he sees everything differently. This card speaks of the transformative power of surrender — of giving up control, pausing the forward march, and allowing a new perspective to emerge through stillness. Something must be sacrificed for clarity to arrive. The Hanged Man is not a victim of circumstance; he is an initiate of wisdom, trading the comfort of the familiar for the revelation of the new.",
       reversedText: "Reversed, the Hanged Man suggests a refusal to surrender what needs to be released — clinging to a position, a relationship, or a belief that no longer serves. The pause is being resisted, and with it, the wisdom it carries. What are you unwilling to let go of?"
@@ -306,7 +306,7 @@ export const tarotData = {
     },
     // ── SWORDS ──
     {
-      id: 53, number: "ACE", name: "ACE OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 53, number: "ACE", name: "ACE OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#air", "#clarity", "#truth", "#breakthrough", "#mind"],
       description: "The Ace of Swords is the root of the powers of air — pure mental clarity cutting through confusion and illusion. The sword rises from a crown of light, double-edged, uncompromising in its precision. When this card appears, a moment of absolute clarity is available: to see things exactly as they are, to speak a difficult truth, to cut through the noise and arrive at what is real. This clarity may be painful — the sword does not spare feelings — but it is the only instrument that can truly set you free.",
       reversedText: "Reversed, the sword turns against itself — overthinking, mental confusion, the inability to find clarity in a fog of competing thoughts. The mind is the problem rather than the solution. Step back from the thinking and find a different way to know."
@@ -318,73 +318,73 @@ export const tarotData = {
       reversedText: "Disagreement and unresolved tensions emerge when differences are calmed only through cold logic, leaving underlying conflicts unresolved rather than genuinely harmonized."
     },
     {
-      id: 55, number: "THREE", name: "THREE OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 55, number: "THREE", name: "THREE OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#sorrow", "#heartbreak", "#truth", "#loss", "#clarity"],
       description: "A painful realization, a hard decision that has to be made, and the melancholy of Saturn recognizing the unveiled truth. Can also indicate disappointment, loss of illusions, or discovery of deception. The light aspects include understanding and losing beautiful but false illusions.",
       reversedText: "Disappointment, pain, sadness, separation, and sorrows represent the darker expressions emphasizing emotional suffering and loss."
     },
     {
-      id: 56, number: "FOUR", name: "FOUR OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 56, number: "FOUR", name: "FOUR OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#truce", "#rest", "#reflection", "#recovery", "#tolerance"],
       description: "The mind has solved a problem, found a solution, or come to a satisfying compromise. A period of mental resolution where balance allows for reflection and rest from conflict. Light aspects include a chance to reflect, rest from fighting, tolerance, and generosity.",
       reversedText: "Cold truce which means no peace at all — isolation and forced restriction rather than true peace suggest superficial resolution."
     },
     {
-      id: 57, number: "FIVE", name: "FIVE OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 57, number: "FIVE", name: "FIVE OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#defeat", "#limitation", "#acceptance", "#philosophy", "#reality"],
       description: "An intellectual crisis where one recognizes their limitations. Realization of limitations and restrictions and philosophy born in pain emerge from this difficult period as the Swords accept their inherently unstable nature.",
       reversedText: "Loss, defeat, failure, poverty, and fear represent the tangible consequences when one struggles against inevitable circumstances without acceptance or understanding."
     },
     {
-      id: 58, number: "SIX", name: "SIX OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 58, number: "SIX", name: "SIX OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#science", "#recovery", "#intellect", "#transition", "#truth"],
       description: "Success after anxiety and trouble, search for truth. Recovery from the previous card's crisis where emotional wounds heal and mental energies fully develop. Emphasizes intellectual harmony and the ability to combine rational thought with deeper spiritual insight.",
       reversedText: "Too much rationalism, distrust, and misanthropy — an excessive reliance on logic at the expense of human connection, leading to skepticism and withdrawal from others."
     },
     {
-      id: 59, number: "SEVEN", name: "SEVEN OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 59, number: "SEVEN", name: "SEVEN OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#futility", "#cunning", "#deception", "#strategy", "#illusion"],
       description: "Intellect struggling against fate through cunning methods — trickery, cheating, sudden affronts, and juggling. However, these schemes ultimately fail as all lists are bound to fail. The light aspect includes unmasking of illusions and disguises.",
       reversedText: "Treachery, deceit, illusion, amorality, evil tricks, and self-pity characterize the shadow meanings."
     },
     {
-      id: 60, number: "EIGHT", name: "EIGHT OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 60, number: "EIGHT", name: "EIGHT OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#interference", "#analysis", "#limitation", "#causality", "#restriction"],
       description: "The intellect's tendency toward endless analysis where the mind recognizes limitations in its own reasoning, creating internal conflicts. The upright aspect suggests realization of causality, acceptance of limitation and relativity — understanding how thoughts interconnect.",
       reversedText: "Confusion, aimless pondering, and compulsive brooding where the analytical mind becomes trapped in unproductive rumination and restless uncontrolled thought patterns rather than achieving clarity."
     },
     {
-      id: 61, number: "NINE", name: "NINE OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 61, number: "NINE", name: "NINE OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#cruelty", "#truth", "#depth", "#anxiety", "#reckoning"],
       description: "Deep analytical thinking about difficult truths. Facing up to facts and realizing truth; going into the depths of a subject with all consequences. Rather than inherently negative, this card reflects the Swords suit's inability to avoid confronting harsh realities.",
       reversedText: "Cruelty, pain, despair, and lack of pity represent the destructive potential when analytical nature becomes disconnected from compassion or becomes obsessive about negative outcomes."
     },
     {
-      id: 62, number: "TEN", name: "TEN OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 62, number: "TEN", name: "TEN OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#ruin", "#endings", "#destruction", "#rebirth", "#finality"],
       description: "The culmination of intellectual development where endless fighting ends in destruction and endless analysis ends in complete loss of hope. Yet the Sun's presence suggests a silent return to origin, to the first spark of mind in the Ace, to start all over again with wisdom gained.",
       reversedText: "Ruin, loss, destruction, separation, pain, and catastrophe characterize the shadow aspects — the harsh consequences of unchecked mental conflict and analytical paralysis."
     },
     {
-      id: 63, number: "PAGE", name: "PAGE OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 63, number: "PAGE", name: "PAGE OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#practicality", "#cleverness", "#perception", "#wind", "#material"],
       description: "The Princess of Swords is the earthy child of her element — the wind over the grounds of the material world. At her best she demonstrates practicality and cleverness with fine skills in material matters, and can be generous and kind once she overcomes inner fear and insecurity.",
       reversedText: "Malicious, cruel, spiteful, and wasteful — failure to recognize facts, aggression, and destruction. She can be stubborn and cruel, turning discriminating and egotistical when results displease her."
     },
     {
-      id: 64, number: "KNIGHT", name: "KNIGHT OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 64, number: "KNIGHT", name: "KNIGHT OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#intellect", "#creativity", "#ideas", "#mastery", "#agility"],
       description: "The Prince of Swords embodies intellectual mastery and creative brilliance — creativity, richness of ideas, intelligence, and mastery of words combined with idealism and mental agility. A Mercury-like spirit capable of swift high achievement.",
       reversedText: "Harsh, malicious, unreliable, cheating, and crude. Without grounding qualities, intelligence becomes unstable and manipulative — deceptive and prone to abandoning commitments when distracted by new interests."
     },
     {
-      id: 65, number: "QUEEN", name: "QUEEN OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 65, number: "QUEEN", name: "QUEEN OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#wisdom", "#perception", "#independence", "#grace", "#clarity"],
       description: "Water in the Air — blending emotional sensitivity with intellectual qualities. Wisdom, imagination, self-confidence, perception, and grace. The Queen embodies independence and freedom of thought with keen perception and sharp wit combined with emotional depth and creative capability.",
       reversedText: "Coldness, inaccessibility, cruelty, and deceitfulness. Impracticality and instability without grounding — potentially dangerous due to intelligence and charm used deceptively."
     },
     {
-      id: 66, number: "KING", name: "KING OF SWORDS", suit: "SWORDS", emoji: "⚔️", color: "#94A3B8",
+      id: 66, number: "KING", name: "KING OF SWORDS", suit: "SWORDS", emoji: "🗡️", color: "#94A3B8",
       tags: ["#intellect", "#analysis", "#courage", "#sharpness", "#judgment"],
       description: "Fire within Air — mental intensity and intellectual prowess. At his best: intelligent judgment, mental realizations, sharp-mindedness, analytical, clever, dexterous, and courageous. Excels at logical thinking and complex reasoning.",
       reversedText: "Coldness, cynicism, and ambiguity when intellectual gifts turn destructive. Tends to put logic and mind ahead of all other values, becoming emotionally detached and judgmental — or transforming into a deceitful, sardonic tyrant of the mind."
