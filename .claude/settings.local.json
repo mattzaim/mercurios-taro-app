@@ -7,7 +7,8 @@
       "Bash(npx vite build)",
       "Bash(tail_start=483)",
       "Read(//Users/suha/Desktop/coding/taro app/**)",
-      "Bash(npm run build)"
+      "Bash(npm run build)",
+      "Bash(grep -oP 'suit: \"\"\"\"\\\\w+\"\"\"\", emoji: \"\"\"\"[^\"\"\"\"]+\"\"\"\"' src/tarotData.ts)"
     ]
   }
 }

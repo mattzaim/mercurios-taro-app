@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { tarotData } from "./tarotData";
+import { tarotData, suitEmoji, suitFlipEmoji } from "./tarotData";
 
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
@@ -77,9 +77,9 @@ const css = `
   }
   .t-header-title {
     font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
+    font-size: 12px;
     color: var(--gold);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     flex-shrink: 1;
     min-width: 0;
   }
@@ -89,8 +89,8 @@ const css = `
     color: var(--muted);
     background: none;
     border: 1px solid var(--muted);
-    border-radius: 20px;
-    padding: 6px 10px;
+    border-radius: 10px;
+    padding: 12px 6px;
     cursor: pointer;
     letter-spacing: 1px;
     transition: color 0.2s, border-color 0.2s;
@@ -294,11 +294,14 @@ const css = `
     color: var(--muted);
     background: none;
     border: 1px solid var(--muted);
-    border-radius: 20px;
-    padding: 6px 10px;
+    border-radius: 10px;
+    padding: 12px 6px;
     cursor: pointer;
     letter-spacing: 1px;
     transition: color 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .t-arcana-toggle.active { color: var(--muted); border-color: var(--muted); opacity: 1; }
   .t-arcana-toggle:not(.active) { opacity: 0.35; }
@@ -427,17 +430,18 @@ const css = `
 
   .t-draw-btn {
     position: fixed;
+    width: 160px;
     bottom: max(env(safe-area-inset-bottom), 66px);
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Press Start 2P', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-size: 10px;
+    letter-spacing: 3px;
     color: var(--gold);
     background: var(--bg);
-    border: 1px solid var(--gold);
-    border-radius: 30px;
-    padding: 14px 32px;
+    border: 3px solid var(--gold);
+    border-radius: 60px;
+    padding: 32px 40px;
     cursor: pointer;
     z-index: 100;
     opacity: 0.9;
@@ -458,11 +462,16 @@ export default function TarotApp() {
   const [flipped, setFlipped] = useState([]);
   const [contentVisible, setContentVisible] = useState(true);
   const [summaryView, setSummaryView] = useState(true);
+  const [reversalsEnabled, setReversalsEnabled] = useState(true);
 
   const getPool = () => {
     let pool = [];
     if (majorActive) pool = [...pool, ...tarotData.major];
-    if (minorActive) pool = [...pool, ...tarotData.minor];
+    if (minorActive) pool = [...pool, ...tarotData.minor.map(c => ({
+      ...c,
+      emoji: suitEmoji[c.suit] || c.emoji,
+      flipEmoji: suitFlipEmoji[c.suit] || false,
+    }))];
     return pool;
   };
 
@@ -501,7 +510,7 @@ export default function TarotApp() {
         if (!pool.length) return;
         const count = spreadMode ? 3 : 1;
         const shuffled = cryptoShuffle(pool);
-        const cards = shuffled.slice(0, count).map(c => ({ ...c, isReversed: cryptoBool(0.28) }));
+        const cards = shuffled.slice(0, count).map(c => ({ ...c, isReversed: reversalsEnabled && cryptoBool(0.28) }));
         setDrawnCards(cards);
         setFlipped(cards.map((_, i) => i));
         setActiveIdx(0);
@@ -540,6 +549,10 @@ export default function TarotApp() {
         <div className="t-header">
           <button className="t-header-title" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }} onClick={() => { setDrawnCards([]); setFlipped([]); setActiveIdx(0); setSummaryView(true); }}>Mercurio's</button>
           <div className="t-header-right">
+            <button
+              className={`t-arcana-toggle${reversalsEnabled ? " active" : ""}`}
+              onClick={() => setReversalsEnabled(v => !v)}
+            >R</button>
             <button
               className={`t-arcana-toggle${majorActive ? " active" : ""}`}
               onClick={() => { if (minorActive || !majorActive) setMajorActive(v => !v); }}
