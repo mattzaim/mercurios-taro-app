@@ -18,7 +18,7 @@ export const tarotData = {
       reversedText: "The shadow of the Fool is recklessness without wisdom — leaping without any awareness of the ground below. Here innocence curdles into naivety, and freedom becomes avoidance of responsibility. The energy is present but directionless, scattered like sparks that never catch flame. Examine what you are running from rather than toward."
     },
     {
-      id: 1, number: "I", name: "THE MAGICIAN", emoji: "✨", color: "#A855F7",
+      id: 1, number: "I", name: "THE MAGICIAN", emoji: "🪄", color: "#A855F7",
       tags: ["#willpower", "#manifestation", "#consciousness", "#creation", "#skill"],
       description: "The Magician represents consciousness, action, and creation — the symbol of the idea of manifestation. He tells us that a power is ready to use as soon as it is recognized. All the tools are laid before him: wand, cup, sword, disk — fire, water, air, earth — and he holds the will to unite them into something new. The Magician is the moment of understanding that you have everything you need. The only act remaining is to see the path clearly and walk it with intention. What the mind conceives and the will directs, the hands can create.",
       reversedText: "The negative side of the Magician is blocked energy — feeling the power within but being unable to channel it. This can manifest as fear, restlessness, even the dread of one's own potential. Energy that finds no outlet builds pressure. There may also be an abuse of power here: manipulation, misdirection, using skill in service of ego rather than truth."
@@ -96,10 +96,10 @@ export const tarotData = {
       reversedText: "A reversed Death card often indicates a resistance to necessary change — the inability to let go, the clinging to what is already dead. Stagnation results not from fate but from refusal. What ending are you postponing?"
     },
     {
-      id: 14, number: "XIV", name: "TEMPERANCE", emoji: "🌊", color: "#7C3AED",
+      id: 14, number: "XIV", name: "THE ART", emoji: "🎭", color: "#7C3AED",
       tags: ["#alchemy", "#balance", "#integration", "#harmony", "#synthesis"],
-      description: "Temperance in many traditions — is the alchemical card, the principle of solve et coagula: dissolve and recombine. It represents the perfect mixture, the achieved balance between opposing forces, the harmony that emerges when contrasts are not suppressed but integrated. This card speaks of the slow, patient work of inner alchemy — the willingness to leave fixed positions, to step back and observe, and then to return and recombine on a higher level. Beauty and peace are not found by eliminating tension but by learning to dance with it.",
-      reversedText: "Reversed, Temperance suggests imbalance or impatience with the alchemical process — rushing the work, forcing the mixture, refusing the necessary dissolution. What synthesis are you resisting because you are unwilling to let the old form dissolve first?"
+      description: "The Art in many traditions — is the alchemical card, the principle of solve et coagula: dissolve and recombine. It represents the perfect mixture, the achieved balance between opposing forces, the harmony that emerges when contrasts are not suppressed but integrated. This card speaks of the slow, patient work of inner alchemy — the willingness to leave fixed positions, to step back and observe, and then to return and recombine on a higher level. Beauty and peace are not found by eliminating tension but by learning to dance with it.",
+      reversedText: "Reversed, The Art suggests imbalance or impatience with the alchemical process — rushing the work, forcing the mixture, refusing the necessary dissolution. What synthesis are you resisting because you are unwilling to let the old form dissolve first?"
     },
     {
       id: 15, number: "XV", name: "THE DEVIL", emoji: "🔗", color: "#DC2626",
