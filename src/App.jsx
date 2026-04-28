@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { tarotData, suitEmoji, suitFlipEmoji } from "./tarotData";
 
 const css = `
@@ -306,6 +306,191 @@ const css = `
   .t-arcana-toggle.active { color: var(--muted); border-color: var(--muted); opacity: 1; }
   .t-arcana-toggle:not(.active) { opacity: 0.35; }
 
+  .t-menu-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--muted);
+    border-radius: 10px;
+    padding: 12px 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: color 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .t-menu-btn.open { color: var(--gold); border-color: var(--gold); }
+
+  .t-picker-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .t-picker-header {
+    padding: max(env(safe-area-inset-top), 20px) clamp(14px, 5vw, 28px) 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(122,117,110,0.2);
+  }
+  .t-picker-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+  .t-picker-subtitle {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 6px;
+    opacity: 0.6;
+  }
+  .t-picker-close {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--muted);
+    border-radius: 10px;
+    padding: 10px 12px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .t-picker-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 clamp(14px, 5vw, 28px) 100px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .t-picker-section-label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin: 22px 0 10px;
+    opacity: 0.55;
+  }
+  .t-picker-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .t-picker-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 12px;
+    border: 1px solid rgba(122,117,110,0.18);
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s;
+    text-align: left;
+    width: 100%;
+  }
+  .t-picker-item:active { background: rgba(200,136,42,0.08); }
+  .t-picker-item.selected {
+    border-color: var(--gold);
+    background: color-mix(in srgb, var(--gold) 8%, transparent);
+  }
+  .t-picker-item-emoji { font-size: 20px; flex-shrink: 0; line-height: 1; }
+  .t-picker-item-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+  }
+  .t-picker-item-check {
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 9px;
+    color: var(--gold);
+  }
+
+  .t-picker-suit-block { margin-bottom: 14px; }
+  .t-picker-suit-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .t-picker-suit-emoji { font-size: 16px; line-height: 1; }
+  .t-picker-suit-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    opacity: 0.7;
+  }
+  .t-picker-ranks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .t-picker-rank-chip {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    background: none;
+    border: 1px solid rgba(122,117,110,0.22);
+    border-radius: 8px;
+    padding: 14px 13px;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s;
+    line-height: 1;
+    min-width: 44px;
+    text-align: center;
+  }
+  .t-picker-rank-chip:active { background: rgba(200,136,42,0.1); }
+  .t-picker-rank-chip.selected {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: color-mix(in srgb, var(--gold) 10%, transparent);
+  }
+
+  .t-picker-confirm {
+    position: fixed;
+    bottom: max(env(safe-area-inset-bottom), 66px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--dark);
+    background: var(--gold);
+    border: none;
+    border-radius: 30px;
+    padding: 20px 36px;
+    cursor: pointer;
+    z-index: 301;
+    white-space: nowrap;
+  }
+
+  .t-menu-panel {
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 10px);
+    transform: translateY(-50%);
+    background: var(--bg);
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    z-index: 200;
+  }
+
   .t-summary-tab { width: 100%; margin-bottom: 16px; }
 
   .t-summary-view {
@@ -452,6 +637,32 @@ const css = `
 
 const SPREAD_LABELS = ["PAST", "PRESENT", "FUTURE"];
 
+const toRoman = (n) => {
+  if (n === 0) return '0';
+  const vals = [10, 9, 5, 4, 1];
+  const syms = ['X', 'IX', 'V', 'IV', 'I'];
+  let result = '', num = n;
+  for (let i = 0; i < vals.length; i++) {
+    while (num >= vals[i]) { result += syms[i]; num -= vals[i]; }
+  }
+  return result;
+};
+
+const MINOR_RANK_LABEL = {
+  ACE: 'Ace', TWO: 'II', THREE: 'III', FOUR: 'IV', FIVE: 'V',
+  SIX: 'VI', SEVEN: 'VII', EIGHT: 'VIII', NINE: 'IX', TEN: 'X',
+  PAGE: 'Page', KNIGHT: 'Knight', QUEEN: 'Queen', KING: 'King'
+};
+const SUIT_LABEL = { CUPS: 'Cups', WANDS: 'Wands', SWORDS: 'Swords', DISKS: 'Disks' };
+
+const getPickerLabel = (card) => {
+  if (card.suit) {
+    const rank = MINOR_RANK_LABEL[card.number] ?? card.number;
+    const suit = SUIT_LABEL[card.suit] ?? card.suit;
+    return `${rank} of ${suit}`;
+  }
+  return `${card.number} – ${card.name}`;
+};
 
 export default function TarotApp() {
   const [majorActive, setMajorActive] = useState(true);
@@ -463,6 +674,9 @@ export default function TarotApp() {
   const [contentVisible, setContentVisible] = useState(true);
   const [summaryView, setSummaryView] = useState(true);
   const [reversalsEnabled, setReversalsEnabled] = useState(true);
+  const lastClickRef = useRef(0);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [pickerSelected, setPickerSelected] = useState([]);
 
   const getPool = () => {
     let pool = [];
@@ -499,6 +713,10 @@ export default function TarotApp() {
   };
 
   const handleCardClick = () => {
+    const now = Date.now();
+    if (now - lastClickRef.current < 500) return;
+    lastClickRef.current = now;
+
     if (isFlipped) {
       setDrawnCards([]);
       setFlipped([]);
@@ -523,6 +741,46 @@ export default function TarotApp() {
   const activeCard = drawnCards[activeIdx];
   const isFlipped = flipped.includes(activeIdx);
   const hasCards = drawnCards.length > 0;
+
+  const pickerSections = [
+    { label: 'MAJOR ARCANA', cards: tarotData.major },
+    ...['CUPS', 'WANDS', 'SWORDS', 'DISKS'].map(suit => ({
+      label: suit,
+      cards: tarotData.minor
+        .filter(c => c.suit === suit)
+        .map(c => ({ ...c, emoji: suitEmoji[c.suit] || c.emoji, flipEmoji: suitFlipEmoji[c.suit] || false }))
+    })).filter(s => s.cards.length > 0)
+  ];
+
+  const confirmPickerSelection = (cards) => {
+    const selected = cards || pickerSelected;
+    if (!selected.length) return;
+    const finalCards = selected.map(c => ({ ...c, isReversed: reversalsEnabled && cryptoBool(0.28) }));
+    setPickerOpen(false);
+    setPickerSelected([]);
+    setContentVisible(false);
+    setTimeout(() => {
+      setDrawnCards(finalCards);
+      setFlipped(finalCards.map((_, i) => i));
+      setActiveIdx(0);
+      setSummaryView(true);
+      setContentVisible(true);
+    }, 200);
+  };
+
+  const togglePickerCard = (card) => {
+    const maxSelect = spreadMode ? 3 : 1;
+    const isSelected = pickerSelected.some(c => c.name === card.name);
+    if (isSelected) {
+      setPickerSelected(prev => prev.filter(c => c.name !== card.name));
+    } else if (pickerSelected.length < maxSelect) {
+      if (maxSelect === 1) {
+        confirmPickerSelection([card]);
+      } else {
+        setPickerSelected(prev => [...prev, card]);
+      }
+    }
+  };
 
   const suitCode = { DISKS: "d", SWORDS: "s", WANDS: "w", CUPS: "c" };
   const rankCode = { ACE: "ACE ", TWO: "2", THREE: "3", FOUR: "4", FIVE: "5", SIX: "6", SEVEN: "7", EIGHT: "8", NINE: "9", TEN: "10", PAGE: "P", KNIGHT: "KNI ", QUEEN: "Q", KING: "KIN" };
@@ -563,10 +821,16 @@ export default function TarotApp() {
             >MIN</button>
             <button
               className={`t-spread-btn${spreadMode ? " active-spread" : ""}`}
+              style={{ height: '39px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               onClick={() => { setContentVisible(false); setTimeout(() => { setSpreadMode(v => !v); setDrawnCards([]); setFlipped([]); setActiveIdx(0); setSummaryView(true); setContentVisible(true); }, 200); }}
             >
               {spreadMode ? "3 CARDS" : "1 CARD"}
             </button>
+            <button
+              className="t-arcana-toggle"
+              style={{ opacity: 1 }}
+              onClick={() => { setPickerSelected([]); setPickerOpen(true); }}
+            >X</button>
           </div>
         </div>
 
@@ -693,6 +957,75 @@ export default function TarotApp() {
       <button className="t-draw-btn" onClick={handleCardClick}>
         {isFlipped ? "RESET" : hasCards ? "REVEAL" : "DRAW"}
       </button>
+
+      {/* Card picker overlay */}
+      {pickerOpen && (
+        <div className="t-picker-overlay">
+          <div className="t-picker-header">
+            <div>
+              <div className="t-picker-title">PICK A CARD</div>
+              {spreadMode && (
+                <div className="t-picker-subtitle">
+                  {pickerSelected.length}/3 SELECTED
+                </div>
+              )}
+            </div>
+            <button className="t-picker-close" onClick={() => setPickerOpen(false)}>✕</button>
+          </div>
+          <div className="t-picker-body">
+            {pickerSections.map(section => (
+              <div key={section.label}>
+                <div className="t-picker-section-label">{section.label}</div>
+                {section.label === 'MAJOR ARCANA' ? (
+                  <div className="t-picker-grid">
+                    {section.cards.map(card => {
+                      const selected = pickerSelected.some(c => c.name === card.name);
+                      return (
+                        <button
+                          key={card.name}
+                          className={`t-picker-item${selected ? ' selected' : ''}`}
+                          onClick={() => togglePickerCard(card)}
+                        >
+                          <span className="t-picker-item-emoji">{card.emoji}</span>
+                          <span className="t-picker-item-name">{getPickerLabel(card)}</span>
+                          {selected && <span className="t-picker-item-check">✦</span>}
+                        </button>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="t-picker-suit-block">
+                    <div className="t-picker-suit-header">
+                      <span className="t-picker-suit-emoji">{section.cards[0]?.emoji}</span>
+                      <span className="t-picker-suit-name">{SUIT_LABEL[section.label] ?? section.label}:</span>
+                    </div>
+                    <div className="t-picker-ranks">
+                      {section.cards.map(card => {
+                        const selected = pickerSelected.some(c => c.name === card.name);
+                        const chip = MINOR_RANK_LABEL[card.number] ?? card.number;
+                        return (
+                          <button
+                            key={card.name}
+                            className={`t-picker-rank-chip${selected ? ' selected' : ''}`}
+                            onClick={() => togglePickerCard(card)}
+                          >
+                            {chip}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          {spreadMode && pickerSelected.length > 0 && (
+            <button className="t-picker-confirm" onClick={() => confirmPickerSelection()}>
+              CONFIRM {pickerSelected.length} {pickerSelected.length === 1 ? 'CARD' : 'CARDS'}
+            </button>
+          )}
+        </div>
+      )}
     </>
   );
 }
