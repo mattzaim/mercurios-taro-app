@@ -439,23 +439,43 @@ const css = `
   }
   .t-picker-rank-chip {
     font-family: 'Press Start 2P', monospace;
-    font-size: 6px;
+    font-size: 7px;
     letter-spacing: 0.5px;
     color: var(--text);
     background: none;
     border: 1px solid rgba(122,117,110,0.22);
     border-radius: 8px;
-    padding: 14px 13px;
+    padding: 18px 16px;
     cursor: pointer;
     transition: background 0.12s, border-color 0.12s;
     line-height: 1;
-    min-width: 44px;
+    min-width: 52px;
     text-align: center;
   }
   .t-picker-rank-chip:active { background: rgba(200,136,42,0.1); }
   .t-picker-rank-chip.selected {
     border-color: var(--gold);
     color: var(--gold);
+    background: color-mix(in srgb, var(--gold) 10%, transparent);
+  }
+
+  .t-picker-r-toggle {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    background: none;
+    border: 1px solid rgba(122,117,110,0.22);
+    border-radius: 6px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .t-picker-r-toggle.active {
+    color: var(--gold);
+    border-color: var(--gold);
     background: color-mix(in srgb, var(--gold) 10%, transparent);
   }
 
@@ -677,6 +697,7 @@ export default function TarotApp() {
   const lastClickRef = useRef(0);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [pickerSelected, setPickerSelected] = useState([]);
+  const [pickerReversed, setPickerReversed] = useState({});
 
   const getPool = () => {
     let pool = [];
@@ -755,9 +776,10 @@ export default function TarotApp() {
   const confirmPickerSelection = (cards) => {
     const selected = cards || pickerSelected;
     if (!selected.length) return;
-    const finalCards = selected.map(c => ({ ...c, isReversed: reversalsEnabled && cryptoBool(0.28) }));
+    const finalCards = selected.map(c => ({ ...c, isReversed: !!pickerReversed[c.name] }));
     setPickerOpen(false);
     setPickerSelected([]);
+    setPickerReversed({});
     setContentVisible(false);
     setTimeout(() => {
       setDrawnCards(finalCards);
@@ -775,8 +797,33 @@ export default function TarotApp() {
       setPickerSelected(prev => prev.filter(c => c.name !== card.name));
     } else if (pickerSelected.length < maxSelect) {
       if (maxSelect === 1) {
-        confirmPickerSelection([card]);
+        confirmPickerSelection([{ ...card, isReversed: !!pickerReversed[card.name] }]);
       } else {
+        setPickerSelected(prev => [...prev, card]);
+      }
+    }
+  };
+
+  const handlePickerR = (e, card) => {
+    e.stopPropagation();
+    if (!spreadMode) {
+      // 1-card: directly confirm as reversed, no toggling
+      setPickerOpen(false);
+      setPickerSelected([]);
+      setPickerReversed({});
+      setContentVisible(false);
+      setTimeout(() => {
+        setDrawnCards([{ ...card, isReversed: true }]);
+        setFlipped([0]);
+        setActiveIdx(0);
+        setSummaryView(true);
+        setContentVisible(true);
+      }, 200);
+    } else {
+      // 3-card: set reversed=true and add to selection if not already in it
+      setPickerReversed(prev => ({ ...prev, [card.name]: true }));
+      const isSelected = pickerSelected.some(c => c.name === card.name);
+      if (!isSelected && pickerSelected.length < 3) {
         setPickerSelected(prev => [...prev, card]);
       }
     }
@@ -821,7 +868,7 @@ export default function TarotApp() {
             >MIN</button>
             <button
               className={`t-spread-btn${spreadMode ? " active-spread" : ""}`}
-              style={{ height: '39px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               onClick={() => { setContentVisible(false); setTimeout(() => { setSpreadMode(v => !v); setDrawnCards([]); setFlipped([]); setActiveIdx(0); setSummaryView(true); setContentVisible(true); }, 200); }}
             >
               {spreadMode ? "3 CARDS" : "1 CARD"}
@@ -829,8 +876,8 @@ export default function TarotApp() {
             <button
               className="t-arcana-toggle"
               style={{ opacity: 1 }}
-              onClick={() => { setPickerSelected([]); setPickerOpen(true); }}
-            >X</button>
+              onClick={() => { setPickerSelected([]); setPickerReversed({}); setPickerOpen(true); }}
+            >0</button>
           </div>
         </div>
 
@@ -975,21 +1022,29 @@ export default function TarotApp() {
           <div className="t-picker-body">
             {pickerSections.map(section => (
               <div key={section.label}>
-                <div className="t-picker-section-label">{section.label}</div>
+                {section.label === 'MAJOR ARCANA' && <div className="t-picker-section-label">{section.label}</div>}
                 {section.label === 'MAJOR ARCANA' ? (
                   <div className="t-picker-grid">
                     {section.cards.map(card => {
                       const selected = pickerSelected.some(c => c.name === card.name);
+                      const rev = !!pickerReversed[card.name];
                       return (
-                        <button
+                        <div
                           key={card.name}
                           className={`t-picker-item${selected ? ' selected' : ''}`}
+                          style={{ cursor: 'pointer' }}
                           onClick={() => togglePickerCard(card)}
                         >
                           <span className="t-picker-item-emoji">{card.emoji}</span>
                           <span className="t-picker-item-name">{getPickerLabel(card)}</span>
-                          {selected && <span className="t-picker-item-check">✦</span>}
-                        </button>
+                          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+                            {selected && <span className="t-picker-item-check" style={{ marginLeft: 0 }}>✦</span>}
+                            <button
+                              className={`t-picker-r-toggle${rev ? ' active' : ''}`}
+                              onClick={e => handlePickerR(e, card)}
+                            >R</button>
+                          </div>
+                        </div>
                       );
                     })}
                   </div>
@@ -1002,15 +1057,21 @@ export default function TarotApp() {
                     <div className="t-picker-ranks">
                       {section.cards.map(card => {
                         const selected = pickerSelected.some(c => c.name === card.name);
+                        const rev = !!pickerReversed[card.name];
                         const chip = MINOR_RANK_LABEL[card.number] ?? card.number;
                         return (
-                          <button
-                            key={card.name}
-                            className={`t-picker-rank-chip${selected ? ' selected' : ''}`}
-                            onClick={() => togglePickerCard(card)}
-                          >
-                            {chip}
-                          </button>
+                          <div key={card.name} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+                            <button
+                              className={`t-picker-rank-chip${selected ? ' selected' : ''}`}
+                              onClick={() => togglePickerCard(card)}
+                            >
+                              {chip}
+                            </button>
+                            <button
+                              className={`t-picker-r-toggle${rev ? ' active' : ''}`}
+                              onClick={e => handlePickerR(e, card)}
+                            >R</button>
+                          </div>
                         );
                       })}
                     </div>
