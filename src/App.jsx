@@ -655,7 +655,7 @@ const css = `
   .t-draw-btn:active { opacity: 0.6; }
 `;
 
-const SPREAD_LABELS = ["PAST", "PRESENT", "FUTURE"];
+const SPREAD_LABELS = ["I", "II", "III"];
 
 const toRoman = (n) => {
   if (n === 0) return '0';
