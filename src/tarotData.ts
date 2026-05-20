@@ -372,9 +372,9 @@ export const tarotData = {
     },
     {
       id: 62, number: "TEN", name: "TEN OF SWORDS", suit: "SWORDS", color: "#94A3B8",
-      tags: ["#ruin", "#endings", "#destruction", "#rebirth", "#finality"],
-      description: "The culmination of intellectual development where endless fighting ends in destruction and endless analysis ends in complete loss of hope. Yet the Sun's presence suggests a silent return to origin, to the first spark of mind in the Ace, to start all over again with wisdom gained.",
-      reversedText: "Ruin, loss, destruction, separation, pain, and catastrophe characterize the shadow aspects — the harsh consequences of unchecked mental conflict and analytical paralysis."
+      tags: ["#closure", "#endings", "#recovery", "#rebirth", "#transition"],
+      description: "Endings, mental exhaustion, and the recognition that a situation has reached its limit. It can point to betrayal, disappointment, burnout, or the painful awareness that something is no longer sustainable. While the imagery is dramatic, the card does not necessarily predict disaster; more often, it reflects the emotional weight of closure and the difficulty of accepting irreversible change. At the same time, it marks the completion of a cycle. Once the truth is visible and the struggle ends, space opens for recovery, perspective, and a different beginning.",
+      reversedText: "Gradual recovery, resilience, and the process of moving beyond a difficult period. It may indicate healing after conflict, learning from painful experiences, or regaining strength after emotional or mental strain. In some cases, the reversal can also show resistance to closure, lingering fear, or difficulty releasing old wounds. The card encourages a balanced approach to endings: neither dramatizing them nor denying them, but allowing transformation to occur naturally."
     },
     {
       id: 63, number: "PAGE", name: "PAGE OF SWORDS", suit: "SWORDS", color: "#94A3B8",
