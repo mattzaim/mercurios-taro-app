@@ -269,9 +269,9 @@ export const tarotData = {
     },
     {
       id: 45, number: "SEVEN", name: "SEVEN OF CUPS", suit: "CUPS", color: "#60A5FA",
-      tags: ["#debauch", "#illusion", "#fantasy", "#escapism", "#choices"],
-      description: "The waters of delusion and clouds of intoxication where emotional turbulence stems from escapism and fantasy. In its positive aspect, it encourages recognizing false hopes and deceptions to ground oneself in reality rather than mistaking illusion for genuine achievement.",
-      reversedText: "Being lost in illusions, drunkenness of mind, vanity, and wrath reflect the dangers of prolonged escapism, unfulfilled promises, and deceptive patterns in relationships."
+      tags: ["#choices", "#illusion", "#imagination", "#temptation", "#astral"],
+      description: "The Seven of Cups represents imagination, temptation, and the overwhelming presence of possibilities. It appears when the mind is flooded with desires, fantasies, projections, or competing choices, making clarity difficult to maintain. Some opportunities may be genuine, while others are illusions built from wishful thinking or escapism. The card encourages discernment between vision and deception, reminding one that possibility alone is not substance. Its energy is creative and expansive, but without grounding it can lead to indecision, distraction, or emotional confusion.",
+      reversedText: "Emerging clarity, disillusionment, or the narrowing of options after a period of confusion. Fantasies may collapse under reality, forcing practical decisions and sharper perception. In some cases, the reversal points to paralysis caused by overanalysis or fear of choosing incorrectly. It asks for focus, commitment, and the ability to distinguish authentic desire from fleeting impulse or emotional projection."
     },
     {
       id: 46, number: "EIGHT", name: "EIGHT OF CUPS", suit: "CUPS", color: "#60A5FA",
@@ -439,9 +439,9 @@ export const tarotData = {
     },
     {
       id: 73, number: "SEVEN", name: "SEVEN OF DISKS", suit: "DISKS", color: "#4ADE80",
-      tags: ["#failure", "#patience", "#deception", "#waiting", "#reevaluation"],
-      description: "Hopes deceived and crushed, unfulfilled promises, and loss of fortune — promises that initially seemed promising but prove short-lived or deceptive. The card teaches the value of patience and waiting for genuine opportunities rather than rushing toward uncertain prospects.",
-      reversedText: "Failure, disappointment, uneasiness, overhasty and stupid actions, and unwise investments warn against impulsive decisions and the consequences of not exercising proper judgment."
+      tags: ["#assessment", "#patience", "#delay", "#investment", "#reevaluation"],
+      description: "The Seven of Disks represents a period of assessment, delay, and uncertain return. It appears when sustained effort has not yet produced the expected results, creating frustration, doubt, or exhaustion around material, emotional, or creative investments. Rather than promising immediate success, the card asks whether the current path still contains genuine potential or merely inertia. Its lesson lies in discernment: knowing when patience will bear fruit, when adjustment is necessary, and when continued effort no longer serves growth.",
+      reversedText: "Reversed, the Seven of Disks points to impatience, burnout, or continuing to invest energy into something that is no longer sustainable. It can reflect wasted effort, poor long-term planning, avoidance of necessary change, or discouragement caused by slow or absent results. The card warns against both premature abandonment and stubborn persistence driven only by sunk cost. Its central question becomes whether the situation requires renewed strategy, realistic expectations, or the willingness to let go entirely."
     },
     {
       id: 74, number: "EIGHT", name: "EIGHT OF DISKS", suit: "DISKS", color: "#4ADE80",
