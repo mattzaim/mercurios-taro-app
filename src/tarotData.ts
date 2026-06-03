@@ -90,10 +90,10 @@ export const tarotData = {
       reversedText: "Reversed, the Hanged Man suggests a refusal to surrender what needs to be released — clinging to a position, a relationship, or a belief that no longer serves. The pause is being resisted, and with it, the wisdom it carries. What are you unwilling to let go of?"
     },
     {
-      id: 13, number: "XIII", name: "DEATH", emoji: "🌑", color: "#334155",
+      id: 13, number: "XIII", name: "REBIRTH", emoji: "🌑", color: "#334155",
       tags: ["#transformation", "#endings", "#transition", "#change", "#rebirth"],
-      description: "Death in the Tarot is not the end — it is the great transformer. It is the card of necessary ending, of the closing of one chapter so that another can begin, of the shedding of what has been outgrown. The skeleton rides forward and nothing stands unchanged in its path — but what remains after the transformation is what was always true. Death invites a radical honesty about what is already over, what is already gone, what has already ended even if we haven't acknowledged it yet. The grief is real. So is the new life waiting on the other side.",
-      reversedText: "A reversed Death card often indicates a resistance to necessary change — the inability to let go, the clinging to what is already dead. Stagnation results not from fate but from refusal. What ending are you postponing?"
+      description: "Rebirth in the Tarot is not just a return — it is a renewal, a resurrection of the spirit. It is the card of necessary endings, of the closing of one chapter so that another can begin, of the shedding of what has been outgrown. The skeleton rides forward and nothing stands unchanged in its path — but what remains after the transformation is what was always true. Rebirth invites a radical honesty about what is already over, what is already gone, what has already ended even if we haven't acknowledged it yet. The grief is real. So is the new life waiting on the other side.",
+      reversedText: "A reversed Rebirth card often indicates a resistance to necessary change — the inability to let go, the clinging to what is already dead. Stagnation results not from fate but from refusal. What ending are you postponing?"
     },
     {
       id: 14, number: "XIV", name: "THE ART", emoji: "🎭", color: "#7C3AED",
@@ -102,10 +102,10 @@ export const tarotData = {
       reversedText: "Reversed, The Art suggests imbalance or impatience with the alchemical process — rushing the work, forcing the mixture, refusing the necessary dissolution. What synthesis are you resisting because you are unwilling to let the old form dissolve first?"
     },
     {
-      id: 15, number: "XV", name: "THE DEVIL", emoji: "🔗", color: "#DC2626",
+      id: 15, number: "XV", name: "THE CHAIN", emoji: "🔗", color: "#DC2626",
       tags: ["#shadow", "#bondage", "#materialism", "#illusion", "#temptation"],
-      description: "The Devil does not chain you against your will — the chains in this card are loose enough to slip free, worn by choice or by unconsciousness. He represents the shadow self, the parts of us we refuse to acknowledge, the material attachments and addictive patterns that masquerade as needs. He is also raw, vital, creative energy — Dionysian power that has no outlet but the destructive. The Devil invites an honest confrontation with what holds you in place: what beliefs, what fears, what pleasures have become invisible prisons?",
-      reversedText: "Reversed, the Devil can indicate a release from bondage — the moment of recognizing and choosing to remove the chains. There may be a new independence, a breaking of an addiction or a pattern. But shadow work is never fully done."
+      description: "The Chain represents the bonds that hold us in place — the chains in this card are loose enough to slip free, worn by choice or by unconsciousness. He represents the shadow self, the parts of us we refuse to acknowledge, the material attachments and addictive patterns that masquerade as needs. He is also raw, vital, creative energy — Dionysian power that has no outlet but the destructive. The Chain invites an honest confrontation with what holds you in place: what beliefs, what fears, what pleasures have become invisible prisons?",
+      reversedText: "Reversed, the Chain can indicate a release from bondage — the moment of recognizing and choosing to remove the chains. There may be a new independence, a breaking of an addiction or a pattern. But shadow work is never fully done."
     },
     {
       id: 16, number: "XVI", name: "THE TOWER", emoji: "⚡️", color: "#B45309",
