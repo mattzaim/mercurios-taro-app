@@ -273,12 +273,16 @@ export const tarotData = {
       description: "The Seven of Cups represents imagination, temptation, and the overwhelming presence of possibilities. It appears when the mind is flooded with desires, fantasies, projections, or competing choices, making clarity difficult to maintain. Some opportunities may be genuine, while others are illusions built from wishful thinking or escapism. The card encourages discernment between vision and deception, reminding one that possibility alone is not substance. Its energy is creative and expansive, but without grounding it can lead to indecision, distraction, or emotional confusion.",
       reversedText: "Emerging clarity, disillusionment, or the narrowing of options after a period of confusion. Fantasies may collapse under reality, forcing practical decisions and sharper perception. In some cases, the reversal points to paralysis caused by overanalysis or fear of choosing incorrectly. It asks for focus, commitment, and the ability to distinguish authentic desire from fleeting impulse or emotional projection."
     },
-    {
-      id: 46, number: "EIGHT", name: "EIGHT OF CUPS", suit: "CUPS", color: "#60A5FA",
-      tags: ["#indolence", "#withdrawal", "#transition", "#leaving", "#transformation"],
-      description: "A transition point where past indulgences have lost their appeal. The card calls for abandoning the past, leaving the current situation, and opening eyes to upcoming changes with honesty. A restlessness and searching without lasting fulfillment drives transformation.",
-      reversedText: "Depression, suicidal ideation, whining, and instability represent the negative psychological states that manifest when one refuses to move forward or acknowledge necessary change."
-    },
+   {
+  id: 46,
+  number: "EIGHT",
+  name: "EIGHT OF CUPS",
+  suit: "CUPS",
+  color: "#60A5FA",
+  tags: ["#detachment", "#transition", "#departure", "#disillusionment", "#growth"],
+  description: "A moment of recognizing that something once meaningful no longer provides emotional fulfillment. The Eight of Cups represents consciously walking away, not out of failure, but from the awareness that continued attachment prevents growth. It reflects a search for deeper purpose, emotional honesty, and the willingness to enter an uncertain but necessary transition.",
+  reversedText: "Avoidance, emotional stagnation, or fear of change can keep a person attached to situations that have already lost their meaning. The reversed card may reflect returning to old patterns, abandoning a needed transition, or struggling to accept that a chapter has ended."
+},
     {
       id: 47, number: "NINE", name: "NINE OF CUPS", suit: "CUPS", color: "#60A5FA",
       tags: ["#happiness", "#fulfillment", "#joy", "#contentment", "#luck"],
